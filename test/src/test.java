@@ -24,12 +24,13 @@ public class test {
 
         //System.out.println(reverseString("David"));
 
-        Object[] arr = new Object[]{1,2,3,"cal",2,"cal",'f',5.431};
+        /*Object[] arr = new Object[]{1,2,3,4,5};
         Object[] newarr;
         newarr = removeDuplicates(arr);
         for(int i=0;i<newarr.length;++i){
             System.out.println(newarr[i]+" ");
-        }
+        }*/
+
     }
 
     public static boolean isPrime(int number){
