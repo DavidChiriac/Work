@@ -38,7 +38,7 @@ public class test {
         //printDublicateCharacters("Java");
 
         /*int a=13,b=2;
-        System.out.print("Greatest common divisor of "+a+" and "+b+" is "+cmmdc(a,b));*/
+        System.out.print("Greatest common divisor of "+a+" and "+b+" is "+Gcd(a,b));*/
 
         //System.out.println(squareRoot(25,0.00001));
 
@@ -211,15 +211,15 @@ public class test {
         }
     }
 
-    public static int cmmdc(int a, int b){
+    public static int Gcd(int a, int b){
         if(a==b){
             return a;
         }
         else if (a>b){
-            return cmmdc(a-b,b);
+            return Gcd(a-b,b);
         }
         else{
-            return cmmdc(a,b-a);
+            return Gcd(a,b-a);
         }
     }
 
