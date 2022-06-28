@@ -8,22 +8,30 @@ public class QuickSortDemo{
 
     public static void main(String args[]) {
 
-        // unsorted integer array
         int[] unsorted = {6, 5, 3, 1, 8, 7, 2, 4};
         System.out.println("Unsorted array :" + Arrays.toString(unsorted));
 
+        insertionSort(unsorted);
 
-        // sorting integer array using quicksort algorithm
-        QuickSort.sort(unsorted);
-
-        // printing sorted array
         System.out.println("Sorted array :" + Arrays.toString(unsorted));
 
     }
 
-    public static void insertionSort(int[] array){
-        for(int i=1;i<array.length;++i){
+    public static void insertionSort(int[] unsorted){
+        for (int i = 1; i < unsorted.length; i++) {
+            int current = unsorted[i];
+            int j = i;
 
+            // create right place by moving elements
+            while (j > 0 && unsorted[j - 1] > current) {
+
+                // move
+                unsorted[j] = unsorted[j - 1];
+                j--;
+            }
+
+            // found the right place, insert now
+            unsorted[j] = current;
         }
     }
 
