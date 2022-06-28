@@ -8,31 +8,28 @@ public class QuickSortDemo{
 
     public static void main(String args[]) {
 
-        int[] unsorted = {6, 5, 3, 1, 8, 7, 2, 4};
+        int[] unsorted = {9,8,7,6,5,4,3,2,1};
         System.out.println("Unsorted array :" + Arrays.toString(unsorted));
 
-        insertionSort(unsorted);
+        bubbleSort(unsorted);
 
         System.out.println("Sorted array :" + Arrays.toString(unsorted));
 
     }
 
-    public static void insertionSort(int[] unsorted){
-        for (int i = 1; i < unsorted.length; i++) {
-            int current = unsorted[i];
-            int j = i;
-
-            // create right place by moving elements
-            while (j > 0 && unsorted[j - 1] > current) {
-
-                // move
-                unsorted[j] = unsorted[j - 1];
-                j--;
-            }
-
-            // found the right place, insert now
-            unsorted[j] = current;
+        public static void bubbleSort(int[] unsorted){
+            boolean sorted;
+            do {
+                sorted = true;
+                for (int i = 0; i < unsorted.length - 1; ++i) {
+                    if (unsorted[i] > unsorted[i + 1]) {
+                        int aux = unsorted[i];
+                        unsorted[i] = unsorted[i + 1];
+                        unsorted[i + 1] = aux;
+                        sorted = false;
+                    }
+                }
+            }while(!sorted);
         }
-    }
 
 }
